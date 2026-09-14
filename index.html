@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوابة التوظيف</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header class="hero-header">
+            <div class="badge">💼 انضم إلى فريقنا</div>
+            
+            <div class="header-image-container">
+                <img src="my-photo.jpg.png" alt="انضم لفريق العمل" class="hero-img">
+            </div>
+
+            <h1>نسعى دائماً لاستقطاب المهارات المميزة!</h1>
+            <p class="subtitle">إذا كنت تتمتع بالشغف والرغبة في النمو والنجاح، يسرنا تقديم طلبك للانضمام إلى عائلتنا المهنية.</p>
+        </header>
+
+        <form id="jobForm">
+            <fieldset>
+                <legend>البيانات الشخصية والمعلومات الأساسية</legend>
+                
+                <div class="form-group">
+                    <label>الاسم الكامل *</label>
+                    <input type="text" id="fullName" required placeholder="أدخل اسمك الثلاثي أو الرباعي">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label>رقم الهاتف *</label>
+                        <input type="tel" id="phone" required placeholder="مثال: 09XX XXX XXX">
+                    </div>
+                    <div class="form-group half">
+                        <label>رقم الواتساب</label>
+                        <input type="tel" id="whatsapp" placeholder="إذا كان مختلفاً عن رقم الهاتف">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label>البريد الإلكتروني</label>
+                        <input type="email" id="email" placeholder="example@email.com">
+                    </div>
+                    <div class="form-group half">
+                        <label>تاريخ الميلاد (أو العمر) *</label>
+                        <input type="date" id="dob" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label>مكان الإقامة *</label>
+                        <input type="text" id="location" required placeholder="المدينة - المنطقة">
+                    </div>
+                    <div class="form-group half">
+                        <label>المؤهل العلمي *</label>
+                        <input type="text" id="education" required placeholder="مثال: ثانوية عامة، بكالوريوس...">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>تفاصيل الوظيفة والخبرات</legend>
+
+                <div class="form-group">
+                    <label>يرجى اختيار الشاغر حسب الخبرة *</label>
+                    <select id="jobRole" required>
+                        <option value="" disabled selected>-- اختر الوظيفة المناسبة --</option>
+                        <option value="كابتن صالة">كابتن صالة</option>
+                        <option value="مساعد شيف">مساعد شيف</option>
+                        <option value="باريستا">باريستا</option>
+                        <option value="محاسب">محاسب</option>
+                        <option value="مسؤول موارد بشرية">مسؤول موارد بشرية</option>
+                        <option value="ريسبشن">ريسبشن</option>
+                        <option value="كاشير">كاشير</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label>عدد سنوات الخبرة في المجال المختار *</label>
+                        <input type="number" id="experience" min="0" required placeholder="مثال: 2">
+                    </div>
+                    <div class="form-group half">
+                        <label>نوع الدوام المفضل *</label>
+                        <select id="shift" required>
+                            <option value="" disabled selected>-- اختر --</option>
+                            <option value="دوام كامل">دوام كامل</option>
+                            <option value="دوام جزئي">دوام جزئي</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>آخر مطعم أو شركة عملت بها</label>
+                    <input type="text" id="lastCompany" placeholder="اذكر اسم مكان العمل الأخير">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label>القدرة على البدء بالعمل *</label>
+                        <select id="availability" required>
+                            <option value="" disabled selected>-- متى يمكنك البدء؟ --</option>
+                            <option value="فوراً">فوراً</option>
+                            <option value="خلال أسبوع">خلال أسبوع</option>
+                            <option value="خلال أسبوعين إلى شهر">خلال أسبوعين إلى شهر</option>
+                            <option value="غير ذلك">غير ذلك</option>
+                        </select>
+                    </div>
+                    <div class="form-group half">
+                        <label>الراتب المتوقع (مع ذكر العملة)</label>
+                        <input type="text" id="salary" placeholder="مثال: 3,000,000 ل.س أو 200 دولار">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>المرفقات والملاحظات</legend>
+
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label>إرفاق السيرة الذاتية (CV)</label>
+                        <input type="file" id="cv" accept=".pdf,.doc,.docx">
+                    </div>
+                    <div class="form-group half">
+                        <label>إرفاق صورة شخصية</label>
+                        <input type="file" id="photo" accept="image/*">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>ملاحظات (إن وجدت)</label>
+                    <textarea id="notes" rows="4" placeholder="أي معلومات أخرى تود إضافتها..."></textarea>
+                </div>
+            </fieldset>
+
+            <button type="submit" id="submitBtn" class="submit-btn">إرسال طلب التوظيف 🚀</button>
+        </form>
+    </div>
+
+    <script>
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxz1-ifupHIfzVPsGpHQpUUU_YsTLmjuG0iKAdP32IbWgbkVeYno6xoUdrdZ4pN3rNq/exec";
+
+        const readFileAsBase64 = (file) => {
+            return new Promise((resolve, reject) => {
+                if (!file) resolve(null);
+                const reader = new FileReader();
+                reader.onload = () => resolve({
+                    name: file.name,
+                    type: file.type
+                });
+                reader.onerror = error => reject(error);
+                reader.readAsDataURL(file);
+            });
+        };
+
+        document.getElementById('jobForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = true;
+            submitBtn.innerText = "جاري إرسال البيانات والملفات... ⏳";
+
+            try {
+                const cvFile = document.getElementById('cv').files[0];
+                const photoFile = document.getElementById('photo').files[0];
+
+                const cvObj = await readFileAsBase64(cvFile);
+                const photoObj = await readFileAsBase64(photoFile);
+
+                const payload = {
+                    fullName: document.getElementById('fullName').value,
+                    phone: document.getElementById('phone').value,
+                    whatsapp: document.getElementById('whatsapp').value,
+                    email: document.getElementById('email').value,
+                    dob: document.getElementById('dob').value,
+                    location: document.getElementById('location').value,
+                    education: document.getElementById('education').value,
+                    jobRole: document.getElementById('jobRole').value,
+                    experience: document.getElementById('experience').value,
+                    shift: document.getElementById('shift').value,
+                    lastCompany: document.getElementById('lastCompany').value,
+                    availability: document.getElementById('availability').value,
+                    salary: document.getElementById('salary').value,
+                    notes: document.getElementById('notes').value,
+                    cvName: cvObj ? cvObj.name : "",
+                    photoName: photoObj ? photoObj.name : ""
+                };
+
+                await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors', // تمنع ظهور شاشة الخطأ على الموبايل تماماً
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                alert("تم إرسال طلبك بنجاح! شكرًا لك.");
+                document.getElementById('jobForm').reset();
+            } catch (err) {
+                alert("حدث خطأ أثناء الإرسال، يرجى المحاولة لاحقاً.");
+                console.error(err);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerText = "إرسال طلب التوظيف 🚀";
+            }
+        });
+    </script>
+</body>
+</html>
