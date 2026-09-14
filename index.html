@@ -5,213 +5,282 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>بوابة التوظيف</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            padding: 20px;
+            direction: rtl;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .hero-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e1f5fe;
+            color: #0288d1;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .header-image-container img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #0288d1;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        fieldset {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background: #fafafa;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #0288d1;
+            padding: 0 10px;
+            font-size: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .form-group.half {
+            flex: 1;
+            margin-bottom: 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #34495e;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="date"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+            background: #fff;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #0288d1;
+            box-shadow: 0 0 5px rgba(2, 136, 209, 0.2);
+        }
+
+        input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px dashed #ccc;
+            border-radius: 6px;
+            font-size: 13px;
+            background: #fff;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: #0288d1;
+            color: white;
+            border: none;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #01579b;
+        }
+
+        .submit-btn:disabled {
+            background: #b0bec5;
+            cursor: not-allowed;
+        }
+
+        @media (max-width: 600px) {
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            .form-group.half {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
-
     <div class="container">
-        <header class="hero-header">
-            <div class="badge">💼 انضم إلى فريقنا</div>
-            
+        <div class="hero-header">
+            <span class="badge">انضم إلى فريقنا</span>
             <div class="header-image-container">
-                <img src="my-photo.jpg.png" alt="انضم لفريق العمل" class="hero-img">
+                <img src="https://via.placeholder.com/100" alt="صورة الشعار">
             </div>
-
             <h1>نسعى دائماً لاستقطاب المهارات المميزة!</h1>
             <p class="subtitle">إذا كنت تتمتع بالشغف والرغبة في النمو والنجاح، يسرنا تقديم طلبك للانضمام إلى عائلتنا المهنية.</p>
-        </header>
+        </div>
 
         <form id="jobForm">
             <fieldset>
                 <legend>البيانات الشخصية والمعلومات الأساسية</legend>
-                
-                <div class="form-group">
-                    <label>الاسم الكامل *</label>
-                    <input type="text" id="fullName" required placeholder="أدخل اسمك الثلاثي أو الرباعي">
-                </div>
-
                 <div class="form-row">
+                    <div class="form-group half">
+                        <label>الاسم الكامل *</label>
+                        <input type="text" placeholder="أدخل اسمك الثلاثي أو الرباعي" required>
+                    </div>
                     <div class="form-group half">
                         <label>رقم الهاتف *</label>
-                        <input type="tel" id="phone" required placeholder="مثال: 09XX XXX XXX">
+                        <input type="tel" placeholder="09XX XXX XXX" required>
                     </div>
+                </div>
+                <div class="form-row">
                     <div class="form-group half">
                         <label>رقم الواتساب</label>
-                        <input type="tel" id="whatsapp" placeholder="إذا كان مختلفاً عن رقم الهاتف">
+                        <input type="tel" placeholder="إذا كان مختلفاً عن رقم الهاتف">
                     </div>
-                </div>
-
-                <div class="form-row">
                     <div class="form-group half">
                         <label>البريد الإلكتروني</label>
-                        <input type="email" id="email" placeholder="example@email.com">
-                    </div>
-                    <div class="form-group half">
-                        <label>تاريخ الميلاد (أو العمر) *</label>
-                        <input type="date" id="dob" required>
+                        <input type="email" placeholder="example@email.com">
                     </div>
                 </div>
-
                 <div class="form-row">
                     <div class="form-group half">
-                        <label>مكان الإقامة *</label>
-                        <input type="text" id="location" required placeholder="المدينة - المنطقة">
+                        <label>تاريخ الميلاد (أو العمر) *</label>
+                        <input type="date" required>
                     </div>
                     <div class="form-group half">
-                        <label>المؤهل العلمي *</label>
-                        <input type="text" id="education" required placeholder="مثال: ثانوية عامة، بكالوريوس...">
+                        <label>مكان الإقامة - المنطقة</label>
+                        <input type="text" placeholder="المدينة - المنطقة">
                     </div>
+                </div>
+                <div class="form-group">
+                    <label>المؤهل العلمي *</label>
+                    <input type="text" placeholder="مثال: ثانوية عامة، بكالوريوس..." required>
                 </div>
             </fieldset>
 
             <fieldset>
                 <legend>تفاصيل الوظيفة والخبرات</legend>
-
-                <div class="form-group">
-                    <label>يرجى اختيار الشاغر حسب الخبرة *</label>
-                    <select id="jobRole" required>
-                        <option value="" disabled selected>-- اختر الوظيفة المناسبة --</option>
-                        <option value="كابتن صالة">كابتن صالة</option>
-                        <option value="مساعد شيف">مساعد شيف</option>
-                        <option value="باريستا">باريستا</option>
-                        <option value="محاسب">محاسب</option>
-                        <option value="مسؤول موارد بشرية">مسؤول موارد بشرية</option>
-                        <option value="ريسبشن">ريسبشن</option>
-                        <option value="كاشير">كاشير</option>
-                    </select>
-                </div>
-
                 <div class="form-row">
                     <div class="form-group half">
-                        <label>عدد سنوات الخبرة في المجال المختار *</label>
-                        <input type="number" id="experience" min="0" required placeholder="مثال: 2">
-                    </div>
-                    <div class="form-group half">
-                        <label>نوع الدوام المفضل *</label>
-                        <select id="shift" required>
-                            <option value="" disabled selected>-- اختر --</option>
-                            <option value="دوام كامل">دوام كامل</option>
-                            <option value="دوام جزئي">دوام جزئي</option>
+                        <label>يرجى اختيار الشاغر حسب الخبرة *</label>
+                        <select required>
+                            <option value="">-- اختر الوظيفة المناسبة --</option>
+                            <option value="1">وظيفة 1</option>
                         </select>
                     </div>
+                    <div class="form-group half">
+                        <label>عدد سنوات الخبرة في المجال المختار *</label>
+                        <input type="number" placeholder="مثال: 2" required>
+                    </div>
                 </div>
-
-                <div class="form-group">
-                    <label>آخر مطعم أو شركة عملت بها</label>
-                    <input type="text" id="lastCompany" placeholder="اذكر اسم مكان العمل الأخير">
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label>نوع الدوام المفضل *</label>
+                        <select required>
+                            <option value="">-- اختر --</option>
+                            <option value="full">دوام كامل</option>
+                            <option value="part">دوام جزئي</option>
+                        </select>
+                    </div>
+                    <div class="form-group half">
+                        <label>آخر مطعم أو شركة عملت بها</label>
+                        <input type="text" placeholder="اذكر اسم العمل الأخير">
+                    </div>
                 </div>
-
                 <div class="form-row">
                     <div class="form-group half">
                         <label>القدرة على البدء بالعمل *</label>
-                        <select id="availability" required>
-                            <option value="" disabled selected>-- متى يمكنك البدء؟ --</option>
-                            <option value="فوراً">فوراً</option>
-                            <option value="خلال أسبوع">خلال أسبوع</option>
-                            <option value="خلال أسبوعين إلى شهر">خلال أسبوعين إلى شهر</option>
-                            <option value="غير ذلك">غير ذلك</option>
+                        <select required>
+                            <option value="">-- متى يمكنك البدء؟ --</option>
+                            <option value="now">فورا</option>
+                            <option value="soon">قريباً</option>
                         </select>
                     </div>
                     <div class="form-group half">
                         <label>الراتب المتوقع (مع ذكر العملة)</label>
-                        <input type="text" id="salary" placeholder="مثال: 3,000,000 ل.س أو 200 دولار">
+                        <input type="text" placeholder="مثال: 3,000,000 ل.س أو 200 دولار">
                     </div>
                 </div>
             </fieldset>
 
             <fieldset>
                 <legend>المرفقات والملاحظات</legend>
-
-                <div class="form-row">
-                    <div class="form-group half">
-                        <label>إرفاق السيرة الذاتية (CV)</label>
-                        <input type="file" id="cv" accept=".pdf,.doc,.docx">
-                    </div>
-                    <div class="form-group half">
-                        <label>إرفاق صورة شخصية</label>
-                        <input type="file" id="photo" accept="image/*">
-                    </div>
+                <div class="form-group">
+                    <label>إرفاق السيرة الذاتية (CV)</label>
+                    <input type="file" id="cvFile">
                 </div>
-
+                <div class="form-group">
+                    <label>إرفاق صورة شخصية</label>
+                    <input type="file" id="imageFile">
+                </div>
                 <div class="form-group">
                     <label>ملاحظات (إن وجدت)</label>
-                    <textarea id="notes" rows="4" placeholder="أي معلومات أخرى تود إضافتها..."></textarea>
+                    <textarea rows="3" placeholder="أي معلومات أخرى تود إضافتها . . ."></textarea>
                 </div>
             </fieldset>
 
-            <button type="submit" id="submitBtn" class="submit-btn">إرسال طلب التوظيف 🚀</button>
+            <button type="submit" class="submit-btn">إرسال طلب التوظيف 🚀</button>
         </form>
     </div>
-
-    <script>
-        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbznD4i8UsLWYpCEQUcjJZRbsZXcThZUeyt3sf2iO19ZTpRQix5f08RHCLOnhqXXormu/exec";
-
-        // دالة لتحويل الملف المرفق إلى Base64 مع احتواء المحتوى والاسم والنوع
-        const readFileAsBase64 = (file) => {
-            return new Promise((resolve, reject) => {
-                if (!file) resolve(null);
-                const reader = new FileReader();
-                reader.onload = () => resolve({
-                    name: file.name,
-                    type: file.type,
-                    data: reader.result // تمرير المحتوى الفعلي للملف
-                });
-                reader.onerror = error => reject(error);
-                reader.readAsDataURL(file);
-            });
-        };
-
-        document.getElementById('jobForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const submitBtn = document.getElementById('submitBtn');
-            submitBtn.disabled = true;
-            submitBtn.innerText = "جاري إرسال البيانات والملفات... ⏳";
-
-            try {
-                const cvFile = document.getElementById('cv').files[0];
-                const photoFile = document.getElementById('photo').files[0];
-
-                const cvObj = await readFileAsBase64(cvFile);
-                const photoObj = await readFileAsBase64(photoFile);
-
-                const payload = {
-                    fullName: document.getElementById('fullName').value,
-                    phone: document.getElementById('phone').value,
-                    whatsapp: document.getElementById('whatsapp').value,
-                    email: document.getElementById('email').value,
-                    dob: document.getElementById('dob').value,
-                    location: document.getElementById('location').value,
-                    education: document.getElementById('education').value,
-                    jobRole: document.getElementById('jobRole').value,
-                    experience: document.getElementById('experience').value,
-                    shift: document.getElementById('shift').value,
-                    lastCompany: document.getElementById('lastCompany').value,
-                    availability: document.getElementById('availability').value,
-                    salary: document.getElementById('salary').value,
-                    notes: document.getElementById('notes').value,
-                    cvFile: cvObj,     // إرسال كائن الـ CV كاملاً (الاسم والمحتوى)
-                    photoFile: photoObj // إرسال كائن الصورة كاملاً (الاسم والمحتوى)
-                };
-
-                await fetch(SCRIPT_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(payload)
-                });
-
-                alert("تم إرسال طلبك بنجاح! شكرًا لك.");
-                document.getElementById('jobForm').reset();
-            } catch (err) {
-                alert("حدث خطأ أثناء الإرسال، يرجى المحاولة لاحقاً.");
-                console.error(err);
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.innerText = "إرسال طلب التوظيف 🚀";
-            }
-        });
-    </script>
 </body>
 </html>
